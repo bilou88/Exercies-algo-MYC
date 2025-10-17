@@ -1,35 +1,60 @@
-const input = "a3b2c4a12"
-
+let input = "a3b2c4a12";
 function decompress(input) {
-    let décompressed = "";
-    let i = 0; 
+  let decompressed = "";
+  let i = 0;
 
-    while i < input.length {
-        let lettre = input[i];
+  while (i < input.length) {
+    let lettre = input[i];
+    i++;
+
+
+    if (typeof lettre === "string") {
+      let Nombre = "";
+
+    
+      while (i < input.length && !isNaN(input[i])) {
+        Nombre += input[i];
         i++;
+      }
 
-        
-        consologe.log(lettre)
+      let count = Number(Nombre);
+      decompressed += lettre.repeat(count);
+    }
+  }
 
-
-/* for (let i = 0; i < input.length; i+= 2) 
-{
-  const char = input[i];
-  const count = parseInt(input[i + 1], 10);
-  décompressed += char.repeat(count);
+  return decompressed;
 }
 
-console.log(décompressed)
 
-let lettres = [];
-for (const l of décompressed) {
-  lettres[l] = (lettres[l] || 0) + 1;
+function mostFrequentLetter(str) {
+  let lettres = {};
+
+  for (let l of str) {
+    lettres[l] = (lettres[l] || 0) + 1;
+  }
+
+ return Object.keys(lettres).reduce(function(a, b) {
+  if (lettres[a] > lettres[b]) {
+    return a;
+  } else {
+    return b;
+  }
+})
+
 }
 
-console.error(lettres)
+function countUniqueLetters(str) {
+  let UniqLettre = new Set(str); 
+  return UniqLettre.size;
+}
 
 
 
-const resultat = ""
-décompressed = décompressed
-lettres = "lettres"  */
+let result = {
+  decompressed: decompress(input),
+  mostFrequent: mostFrequentLetter(decompress(input)),
+  uniqueLetters: countUniqueLetters(decompress(input))
+};
+
+console.log(result);
+
