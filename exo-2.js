@@ -27,11 +27,11 @@ function creerPaires(tabJoueurs) {
   return paires;
 }
 
-// Déclaration des listes de joueurs AVANT de les utiliser
+
 const joueurs1 = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"];
 const joueurs2 = ["Alice", "Bob", "Charlie", "David", "Eve"];
 
-// Affichage avec séparateurs ASCII
+
 console.log("╔══════════════════════════╗");
 console.log("║ Paires de joueurs1       ║");
 console.log("╚══════════════════════════╝");
