@@ -20,6 +20,7 @@ function creerPaires(tabJoueurs) {
     paires.push([joueur1, joueur2]);
   }
 
+
   if (tab.length === 1) {
     paires.push({ exempt: tab[0] });
   }
